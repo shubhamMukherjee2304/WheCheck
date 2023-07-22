@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My weather app</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Montserrat&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+</head>
+  <body>
+    <h1><nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><h2>WheCheck</h2></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse fw-semibold navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"><h5>Home</h5></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"><h5>About</h5></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"><h5>Usage</h5></a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input id="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit" id="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav></h1>
+
+      <div class="container">
+        <h1 style="text-align: center;" class="ctName">Weather Of <span id="cityName"></span></h1>
+
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+              <div class="col">
+                <div class="card mb-4 rounded-4 shadow-lg">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-semibold">Temperature</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><span id="temp2"></span><small class="text-body-secondary fw-light"> °C</small></h1>
+                    <ul class="list-unstyled fw-normal fs-5 mt-3 mb-4">
+                      <li>Temperature is <span id="temp"></span><small class="text-body-secondary fw-light"> °C</small></li>
+                      <li>Min Temperature is <span id = "min_temp"></span><small class="text-body-secondary fw-light"> °C</small></li>
+                      <li>Max Temperature is <span id = "max_temp"></span><small class="text-body-secondary fw-light"> °C</small></li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-4 shadow-lg">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-semibold">Humidity Info</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><span id="humidity2"></span><small class="text-body-secondary fw-light"> %</small></h1>
+                    <ul class="list-unstyled fw-normal fs-5 mt-3 mb-4">
+                      <li>Cloud PCT is <span id="cloud_pct"></span></li>
+                      <li>Feels Like <span id="feels_like"></span><small class="text-body-secondary fw-light"> °C</small></li>
+                      <li>Humidity is <span id="humidity"></span><small class="text-body-secondary fw-light"> %</small></li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-4 shadow-lg">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-semibold">Wind Info</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><span id="wind_speed2"></span><small class="text-body-secondary fw-light"> km/hr</small></h1>
+                    <ul class="list-unstyled fw-normal fs-5 mt-3 mb-4">
+                      <li>Wind speed is <span id="wind_speed"></span><small class="text-body-secondary fw-light"> km/hr</small></li>
+                      <li>Wind degree is <span id="wind_degrees"></span><small class="text-body-secondary fw-light"> °</small></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <h2 class="block2 display-6 text-center mb-4">Look out Further</h2>
+        
+            <div class="table-responsive">
+              <table class="table text-center">
+                <thead>
+                  <tr>
+                    <th style="width: 34%;"></th>
+                    <th style="width: 22%;">Temp</th>
+                    <th style="width: 22%;">Feels_like</th>
+                    <th style="width: 22%;">Humidity</th>
+                    <th style="width: 22%;">Max_temp</th>
+                    <th style="width: 22%;">Min_temp</th>
+                    <th style="width: 22%;">Cloud_PCT</th>
+                    <th style="width: 22%;">Wind_speed</th>
+                    <th style="width: 22%;">Wind_degrees</th>                   
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" class="text-start">Delhi</th>
+                    <td><span id="deltemp"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="delfeels_like"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="delhumidity"></span><small class="text-body-light fw-light"> %</small></td>
+                    <td><span id="delmin_temp"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="delmax_temp"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="delcloud_pct"></span></td>
+                    <td><span id="delwind_speed"></span><small class="text-body-light fw-light"> km/hr</small></td>
+                    <td><span id="delwind_degrees"></span><small class="text-body-light fw-light"> °</small></td>                    
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-start">Bangalore</th>
+                    <td><span id="bantemp"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="banfeels_like"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="banhumidity"></span><small class="text-body-light fw-light"> %</small></td>
+                    <td><span id="banmin_temp"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="banmax_temp"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="bancloud_pct"></span></td>
+                    <td><span id="banwind_speed"></span><small class="text-body-light fw-light"> km/hr</small></td>
+                    <td><span id="banwind_degrees"></span><small class="text-body-light fw-light"> °</small></td> 
+                  </tr>
+                </tbody>
+        
+                <tbody>
+                  <tr>
+                    <th scope="row" class="text-start">Kolkata</th>
+                    <td><span id="koltemp"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="kolfeels_like"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="kolhumidity"></span><small class="text-body-light fw-light"> %</small></td>
+                    <td><span id="kolmin_temp"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="kolmax_temp"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="kolcloud_pct"></span></td>
+                    <td><span id="kolwind_speed"></span><small class="text-body-light fw-light"> km/hr</small></td>
+                    <td><span id="kolwind_degrees"></span><small class="text-body-light fw-light"> °</small></td> 
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-start">Chennai</th>
+                    <td><span id="chetemp"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="chefeels_like"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="chehumidity"></span><small class="text-body-light fw-light"> %</small></td>
+                    <td><span id="chemin_temp"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="chemax_temp"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="checloud_pct"></span></td>
+                    <td><span id="chewind_speed"></span><small class="text-body-light fw-light"> km/hr</small></td>
+                    <td><span id="chewind_degrees"></span><small class="text-body-light fw-light"> °</small></td> 
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-start">Mumbai</th>
+                    <td><span id="mumtemp"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="mumfeels_like"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="mumhumidity"></span><small class="text-body-light fw-light"> %</small></td>
+                    <td><span id="mummin_temp"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="mummax_temp"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="mumcloud_pct"></span></td>
+                    <td><span id="mumwind_speed"></span><small class="text-body-light fw-light"> km/hr</small></td>
+                    <td><span id="mumwind_degrees"></span><small class="text-body-light fw-light"> °</small></td> 
+                </tr>
+    
+                  <tr>
+                    <th scope="row" class="text-start">Ahmedabad</th>
+                    <td><span id="ahmtemp"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="ahmfeels_like"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="ahmhumidity"></span><small class="text-body-light fw-light"> %</small></td>
+                    <td><span id="ahmmin_temp"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="ahmmax_temp"></span><small class="text-body-light fw-light"> °C</td>
+                    <td><span id="ahmcloud_pct"></span></td>
+                    <td><span id="ahmwind_speed"></span><small class="text-body-light fw-light"> km/hr</small></td>
+                    <td><span id="ahmwind_degrees"></span><small class="text-body-light fw-light"> °</small></td> 
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </main>
+
+
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <script src="script.js">
+
+    </script>
+</body>
+</html>
